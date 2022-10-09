@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welkom bij de Adventure Challenge!</h1>
+    <img src="~/lib/Challenge.png" width="750" height="450">
+    <h2>Klik op een van de knoppen hieronder om verder te gaan.</h2>
+    <br />
+    <div>
+        <div class="w-100 btn-group" role="group">
+            <a asp-controller="Category" asp-action="Create" class="btn btn-primary mx-2">
+                <i class="bi bi-plus-circle"></i> &nbsp; Maak een nieuwe challenge aan.</a>
+            <a class="btn btn-secondary mx-2" asp-controller="Category" asp-action="Index">
+                <i class="bi bi-list-ul"></i> &nbsp; Bekijk alle challenges.
+            </a>
+@*            <a class="btn btn-success mx-2" asp-controller="Category" asp-action="Index">
+                <i class="bi bi-list-check"></i> &nbsp; Rond een challenge af.*@
+            </a>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    @{
+    <partial name="_ValidationScriptsPartial" />
+    }
+    }

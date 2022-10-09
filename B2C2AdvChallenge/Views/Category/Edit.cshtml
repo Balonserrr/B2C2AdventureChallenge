@@ -1,0 +1,46 @@
+﻿@model Category
+
+<form method="post" asp-action="Edit">
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary">Challenge wijzigen</h2>
+			<hr />
+		</div>
+		<div asp-validation-summary="All"></div>
+		<div class="mb-3">
+			<label asp-for="Name"></label>
+			<input asp-for="Name" class="form-control" />
+			<span asp-validation-for="Name" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="Description"></label>
+			<input asp-for="Description" class="form-control" />
+			<span asp-validation-for="Description" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="DisplayOrder"></label>
+			<input asp-for="DisplayOrder" class="form-control" />
+			<span asp-validation-for="DisplayOrder" class="text-danger"></span>
+		</div>
+		<div class="mb-3">
+			<label asp-for="ChallengeTime"></label>
+			<select asp-for="ChallengeTime">
+				<option value="'s Ochtends">'s Ochtends</option>
+				<option value="'s Middags">'s Middags</option>
+				<option value="'s Avonds">'s Avonds</option>
+			</select>
+			<span asp-validation-for="ChallengeTime" class="text-danger"></span>
+		</div>
+		<button type="submit" class="btn btn-primary" style="width:150px">Wijzigen</button>
+		<a asp-controller="Category" asp-action="Index" class="btn btn-secondary" style="width150px">
+			Terug naar het overzicht
+		</a>
+	</div>
+</form>
+
+@section Scripts{
+@{
+	<partial name="_ValidationScriptsPartial" />
+}
+}
+
